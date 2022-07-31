@@ -1,13 +1,146 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+/*   color variables */
+/*   border radius */
+*,
+*::before
+*::after{
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 2rem;
+}
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,
+  minmax(12rem, 16rem));
+  gap: 2rem;
+  justify-content: center;
+}
+ .card{
+  overflow: hidden;
+  box-shadow: 0 4px 20px clr-gray300;
+  border-radius: radius;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 200ms ease-in; 
+ }
+ .image{
+  display: flex;
+  flex-wrap: wrap;
+  background-color:blanchedalmond;
+  overflow: hidden;
+  height: 10rem;
+  width: 100%;
+  object-fit: cover;
+ }
+ title{
+  padding: 1rem;
+  
+ }
+ description{
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: left;
+  padding: 0 1rem;
+}
+ .card_button{
+  padding: 1rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  border: 2px solid clr-primary;
+  background: transparent;
+  color: royalblue;
+  border-radius: radius;
+  transition: background 200ms ease-in, color 200ms ease-in;
+ }
+ button{
+  padding: 1rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: rebeccapurple;
+ }
+
+ #hover{
+  transform: scale(1.02);
+
+ }
+ #hover button{
+  background:scroll;
+  color:rgb(64, 65, 119) ;
+
+}
+h1{
+  font-size: xx-large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-style: italic;
+  font-kerning: initial;
+  background-color: aqua;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+* {
+  box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+}
+
+.container {
+  margin: 1rem;
+  text-align: center;
+}
+
+.nav {
+  background-color: rgb(64, 149, 189);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.site-title {
+  font-size: 2rem;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
+.nav li.active {
+  background-color: #555;
+}
+
+.nav li:hover {
+  background-color: #777;
+}
+
+
+
+
+
