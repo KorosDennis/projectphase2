@@ -8,15 +8,20 @@ const SNEAKER_CARD= "http://localhost:8000/sneakers"
 function Card(){
 
 const [sneakers, setSneakers]= useState([]);
+//const [favoriteVisible,setFavoriteVisible]= useState(true);
+//const cardToDisplay = sneakers.filter((sneaker)=>favoriteVisible || sneaker.isFavorite );
+
 
   useEffect(() => {
     fetch (SNEAKER_CARD)
     .then((response)=>response.json())
     .then((data)=> {
-      console.log (data)
+      //console.log (data)
       setSneakers(data)
     });
   },[])
+
+
 
     return (
 
@@ -27,7 +32,7 @@ const [sneakers, setSneakers]= useState([]);
             <img className="image" src= {sneakers[key].image} alt='loading...'/>
             <h2 className="card_title">{sneakers[key].brand}  {sneakers[key].year}</h2>
             <p className="card_description"> Worth: {sneakers[key].retailPrice}$</p>
-            <button className="card_button">Details</button>
+            <button className="card_button">Add favorite</button>
         </div>
          ))}
         </div>

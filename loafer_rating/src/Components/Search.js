@@ -1,21 +1,24 @@
 import React, { useEffect, useState, } from "react";
+import Card from "./Card";
 
 
-const SEARCH= "http://localhost:8000/sneakers"
+const SEARCH= "http://localhost:8000/sneakers/"
 
 function Search(){
 
 const [searchItem, setSearchItem] = useState('')
 const [results,setResults]=useState(0)
+const [count, setCount]=useState(0)
 
 const handleSearch= (event) =>{
     setSearchItem(event.target.value)
 }
 const handleSubmit = (event)=>{
     event.preventDefault()
+    setCount(count +1)
 }
 
-const searchInfo=()=>{
+const searchInfo= () =>{
     const actualSearch = SEARCH + searchItem
     
     fetch(actualSearch)
@@ -23,19 +26,20 @@ const searchInfo=()=>{
     .then ((data)=>{
          setSearchItem('')
          setResults(data.sneakers == null ? 0 : data.sneakers.length)
-         data.forEach((sneaker)=>{
+         //data.forEach((sneaker)=>{
             // setImage(sneaker.image)
             // setTitle(sneaker.brand)
             // setPrice(sneaker.retailPrice)
          })
             
-         
-    })
-
-
+}
+    
+useEffect(
+    searchInfo, [count]
+)
 
     return(
-        <div className="containe">
+        <div className="container">
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="search" className="form-label">Search sneaker</label>
@@ -43,7 +47,7 @@ const searchInfo=()=>{
             </div>
             <h3>Search Results({results})</h3>
             <div>
-               {}
+               {Card}
             </div>
         </form>
         </div>
@@ -51,5 +55,5 @@ const searchInfo=()=>{
     )
 }
 
-}
+
 export default Search;
