@@ -17,6 +17,9 @@ open another terminal and run 'json-server --watch db.json --port 8000'
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 To view the db.json  on the browser open [http://localhost:8000/sneakers](http://localhost:3000)
+
+If you want to view live page visit click [https://projectphase2.vercel.app/](https://projectphase2.vercel.app/)
+
 ## Technologies used
 I used  purely react JS  to make this web appplication
 
